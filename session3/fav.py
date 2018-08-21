@@ -7,9 +7,9 @@ for index, item in enumerate(items, start=1):
 print('*' * 30)
 
 while True:
-    command = input("Select action: C, R, U, D: ")
+    command = input("Select action: C, R, U, D: ").upper()
 
-    if command.upper() == "C":
+    if command == "C":
         add = input("Type your additional item: ")
         items.append(add)
         print('*' * 30)
@@ -21,12 +21,12 @@ while True:
 
         print('*' * 30)
 
-    elif command.upper() == "R":
+    elif command == "R":
         for index, item in enumerate(items, start=1):
             print(index, ". ", item, sep="")
         print('*' * 30)
 
-    elif command.upper() == "U":
+    elif command == "U":
         position = int(input("Position to update? "))
 
         if (position - 1) in range(item_size):
@@ -44,7 +44,7 @@ while True:
 
         print('*' * 30)
 
-    elif command.upper() == "D":
+    elif command == "D":
 
         removal = input("Item to remove? ")
 
