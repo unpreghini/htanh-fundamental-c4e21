@@ -8,7 +8,7 @@ print('*' * 30)
 
 command = input("Select action: C, R, U, D: ")
 
-if command == "C":
+if command.upper() == "C":
     add = input("Type your additional item: ")
     items.append(add)
     print('*' * 30)
@@ -20,12 +20,12 @@ if command == "C":
 
     print('*' * 30)
 
-elif command == "R":
+elif command.upper() == "R":
     for index, item in enumerate(items, start=1):
         print(index, ". ", item, sep="")
     print('*' * 30)
 
-elif command == "U":
+elif command.upper() == "U":
     position = int(input("Position to update? "))
 
     if (position - 1) in range(item_size):
@@ -43,7 +43,7 @@ elif command == "U":
 
     print('*' * 30)
 
-elif command == "D":
+elif command.upper() == "D":
 
     removal = input("Item to remove? ")
 
