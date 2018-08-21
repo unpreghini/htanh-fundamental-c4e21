@@ -1,5 +1,5 @@
-n = int(input("How many rows do you want? "))
-m = int(input("How many columns do you want? "))
+n = int(input("How many rows do you want?: "))
+m = int(input("How many columns do you want?: "))
 
 
 for i in range(n):

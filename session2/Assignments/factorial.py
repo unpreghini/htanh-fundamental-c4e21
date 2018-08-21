@@ -6,4 +6,4 @@ while n > 0:
     r = r * n
     n = n - 1
 
-print("Result: ", r)
+print("Factorials = ", r)
