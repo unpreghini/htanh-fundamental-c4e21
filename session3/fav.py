@@ -6,60 +6,61 @@ for index, item in enumerate(items, start=1):
 
 print('*' * 30)
 
-command = input("Select action: C, R, U, D: ")
+while True:
+    command = input("Select action: C, R, U, D: ")
 
-if command.upper() == "C":
-    add = input("Type your additional item: ")
-    items.append(add)
-    print('*' * 30)
+    if command.upper() == "C":
+        add = input("Type your additional item: ")
+        items.append(add)
+        print('*' * 30)
 
-    print("These are your new favorite items:")
+        print("These are your new favorite items:")
 
-    for index, item in enumerate(items, start=1):
-        print(index, ". ", item, sep="")
+        for index, item in enumerate(items, start=1):
+            print(index, ". ", item, sep="")
 
-    print('*' * 30)
+        print('*' * 30)
 
-elif command.upper() == "R":
-    for index, item in enumerate(items, start=1):
-        print(index, ". ", item, sep="")
-    print('*' * 30)
+    elif command.upper() == "R":
+        for index, item in enumerate(items, start=1):
+            print(index, ". ", item, sep="")
+        print('*' * 30)
 
-elif command.upper() == "U":
-    position = int(input("Position to update? "))
+    elif command.upper() == "U":
+        position = int(input("Position to update? "))
 
-    if (position - 1) in range(item_size):
-        replace_item = input("Your replacing favorite? ")
-        items[position - 1] = replace_item
+        if (position - 1) in range(item_size):
+            replace_item = input("Your replacing favorite? ")
+            items[position - 1] = replace_item
+        else:
+            raise Exception("Invalid input")
+
+        print('*' * 30)
+
+        print("These are your new favorite items:")
+
+        for index, item in enumerate(items, start=1):
+            print(index, ". ", item, sep="")
+
+        print('*' * 30)
+
+    elif command.upper() == "D":
+
+        removal = input("Item to remove? ")
+
+        if removal in items:
+            items.remove(removal)
+        else:
+            raise ValueError("Invalid input: Item not found")
+
+        print('*' * 30)
+
+        print("These are your new favorite items:")
+
+        for index, item in enumerate(items, start=1):
+            print(index, ". ", item, sep="")
+
+        print('*' * 30)
+
     else:
-        raise Exception("Invalid input")
-
-    print('*' * 30)
-
-    print("These are your new favorite items:")
-
-    for index, item in enumerate(items, start=1):
-        print(index, ". ", item, sep="")
-
-    print('*' * 30)
-
-elif command.upper() == "D":
-
-    removal = input("Item to remove? ")
-
-    if removal in items:
-        items.remove(removal)
-    else:
-        raise ValueError("Invalid input: Item not found")
-
-    print('*' * 30)
-
-    print("These are your new favorite items:")
-
-    for index, item in enumerate(items, start=1):
-        print(index, ". ", item, sep="")
-
-    print('*' * 30)
-
-else:
-    raise ValueError("Command not found, please try again")
+        raise ValueError("Command not found, please try again")
